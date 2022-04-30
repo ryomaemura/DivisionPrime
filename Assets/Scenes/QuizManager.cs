@@ -9,6 +9,8 @@ public class QuizManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI quizText;
     [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject resultPanel;
+    [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject playGuidePanel;
     int[] primeNumbers = {2, 3, 5, 7};
     int quizNumber = 1;
     int randomNumber = 0;
@@ -17,7 +19,9 @@ public class QuizManager : MonoBehaviour
     void Start()
     {
         resetQuiz();
+        closeMainPanel();
         closeResultPanel();
+        closePlayGuidePanel();
     }
 
     // Update is called once per frame
@@ -49,11 +53,35 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+    public void openMainPanel() {
+        mainPanel.SetActive(true);
+    }
+
+    public void closeMainPanel() {
+        mainPanel.SetActive(false);
+    }
+
     public void openResultPanel() {
         resultPanel.SetActive(true);
     }
 
     public void closeResultPanel() {
         resultPanel.SetActive(false);
+    }
+    
+    public void openMenuPanel() {
+        menuPanel.SetActive(true);
+    }
+
+    public void closeMenuPanel() {
+        menuPanel.SetActive(false);
+    }
+    
+    public void openPlayGuidePanel() {
+        playGuidePanel.SetActive(true);
+    }
+
+    public void closePlayGuidePanel() {
+        playGuidePanel.SetActive(false);
     }
 }
